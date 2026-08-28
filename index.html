@@ -53,6 +53,29 @@ header p {
     margin-top: 0;
 }
 
+.instructions {
+    background: #fff8e1;
+    border-left: 5px solid #d99b00;
+}
+
+.pin-box {
+    margin: 20px 0;
+}
+
+.pin-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.pin-box input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
 .position {
     margin-bottom: 30px;
 }
@@ -143,203 +166,342 @@ footer {
 
 <div class="container">
 
-    <div class="card">
-        <h2>🗳️ Welcome to the Election Portal</h2>
+    <div class="card instructions">
+        <h2>🗳️ Voting Instructions</h2>
 
         <p>
             Welcome to the official NAOSS LASU 2026 Election Portal.
         </p>
 
         <p>
-            Kindly select <strong>one candidate</strong> for each position
-            before submitting your ballot.
+            Enter your issued voter PIN and select <strong>one candidate
+            for each position</strong>.
         </p>
 
         <p>
-            <strong>Important:</strong> Please review your selections carefully
-            before submitting.
+            <strong>Important:</strong> Review your selections carefully
+            before submitting your ballot.
         </p>
     </div>
 
-    <div class="card">
+    <form
+        action="https://formspree.io/f/xvkoolyp"
+        method="POST"
+        id="votingForm"
+    >
 
-        <!-- PRESIDENT -->
-        <div class="position">
-            <div class="position-title">
-                President (Aare)
-            </div>
+        <!-- PIN -->
+        <div class="card pin-box">
 
-            <label class="candidate">
-                <input type="radio" name="president" value="RUKKY">
-                RUKKY
+            <label for="voter_pin">
+                Voter PIN
             </label>
 
-            <label class="candidate">
-                <input type="radio" name="president" value="VOID">
-                VOID
-            </label>
+            <input
+                type="text"
+                id="voter_pin"
+                name="Voter PIN"
+                placeholder="Enter your issued PIN"
+                required
+            >
+
         </div>
 
-        <!-- VICE PRESIDENT -->
-        <div class="position">
-            <div class="position-title">
-                Vice President
+        <div class="card">
+
+            <!-- PRESIDENT -->
+            <div class="position">
+
+                <div class="position-title">
+                    President (Aare)
+                </div>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="President (Aare)"
+                        value="RUKKY"
+                        required
+                    >
+                    RUKKY
+                </label>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="President (Aare)"
+                        value="VOID"
+                    >
+                    VOID
+                </label>
+
             </div>
 
-            <label class="candidate">
-                <input type="radio" name="vice_president" value="PELUMI">
-                PELUMI
-            </label>
+            <!-- VICE PRESIDENT -->
+            <div class="position">
 
-            <label class="candidate">
-                <input type="radio" name="vice_president" value="MOBOLA">
-                MOBOLA
-            </label>
-        </div>
+                <div class="position-title">
+                    Vice President
+                </div>
 
-        <!-- GENERAL SECRETARY -->
-        <div class="position">
-            <div class="position-title">
-                General Secretary
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Vice President"
+                        value="PELUMI"
+                        required
+                    >
+                    PELUMI
+                </label>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Vice President"
+                        value="MOBOLA"
+                    >
+                    MOBOLA
+                </label>
+
             </div>
 
-            <label class="candidate">
-                <input type="radio" name="general_secretary" value="ADEBAYO">
-                ADEBAYO
-            </label>
+            <!-- GENERAL SECRETARY -->
+            <div class="position">
 
-            <label class="candidate">
-                <input type="radio" name="general_secretary" value="VOID">
-                VOID
-            </label>
-        </div>
+                <div class="position-title">
+                    General Secretary
+                </div>
 
-        <!-- PRO -->
-        <div class="position">
-            <div class="position-title">
-                P.R.O
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="General Secretary"
+                        value="ADEBAYO"
+                        required
+                    >
+                    ADEBAYO
+                </label>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="General Secretary"
+                        value="VOID"
+                    >
+                    VOID
+                </label>
+
             </div>
 
-            <label class="candidate">
-                <input type="radio" name="pro" value="AYINLA">
-                AYINLA
-            </label>
+            <!-- PRO -->
+            <div class="position">
 
-            <label class="candidate">
-                <input type="radio" name="pro" value="VOID">
-                VOID
-            </label>
-        </div>
+                <div class="position-title">
+                    P.R.O
+                </div>
 
-        <!-- TREASURER -->
-        <div class="position">
-            <div class="position-title">
-                Treasurer
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="P.R.O"
+                        value="AYINLA"
+                        required
+                    >
+                    AYINLA
+                </label>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="P.R.O"
+                        value="VOID"
+                    >
+                    VOID
+                </label>
+
             </div>
 
-            <label class="candidate">
-                <input type="radio" name="treasurer" value="DAVID">
-                DAVID
-            </label>
+            <!-- TREASURER -->
+            <div class="position">
 
-            <label class="candidate">
-                <input type="radio" name="treasurer" value="VOID">
-                VOID
-            </label>
-        </div>
+                <div class="position-title">
+                    Treasurer
+                </div>
 
-        <!-- WELFARE DIRECTOR -->
-        <div class="position">
-            <div class="position-title">
-                Welfare Director
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Treasurer"
+                        value="DAVID"
+                        required
+                    >
+                    DAVID
+                </label>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Treasurer"
+                        value="VOID"
+                    >
+                    VOID
+                </label>
+
             </div>
 
-            <label class="candidate">
-                <input type="radio" name="welfare" value="SHO">
-                SHO
-            </label>
+            <!-- WELFARE DIRECTOR -->
+            <div class="position">
 
-            <label class="candidate">
-                <input type="radio" name="welfare" value="VOID">
-                VOID
-            </label>
-        </div>
+                <div class="position-title">
+                    Welfare Director
+                </div>
 
-        <!-- FINANCIAL SECRETARY -->
-        <div class="position">
-            <div class="position-title">
-                Financial Secretary
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Welfare Director"
+                        value="SHO"
+                        required
+                    >
+                    SHO
+                </label>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Welfare Director"
+                        value="VOID"
+                    >
+                    VOID
+                </label>
+
             </div>
 
-            <label class="candidate">
-                <input type="radio" name="financial_secretary" value="MUBARAK">
-                MUBARAK
-            </label>
+            <!-- FINANCIAL SECRETARY -->
+            <div class="position">
 
-            <label class="candidate">
-                <input type="radio" name="financial_secretary" value="HABIBAT">
-                HABIBAT
-            </label>
-        </div>
+                <div class="position-title">
+                    Financial Secretary
+                </div>
 
-        <!-- EPE COORDINATOR -->
-        <div class="position">
-            <div class="position-title">
-                Epe Coordinator
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Financial Secretary"
+                        value="MUBARAK"
+                        required
+                    >
+                    MUBARAK
+                </label>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Financial Secretary"
+                        value="HABIBAT"
+                    >
+                    HABIBAT
+                </label>
+
             </div>
 
-            <label class="candidate">
-                <input type="radio" name="epe_coordinator" value="OKE HABEEB">
-                OKE HABEEB
-            </label>
+            <!-- EPE COORDINATOR -->
+            <div class="position">
 
-            <label class="candidate">
-                <input type="radio" name="epe_coordinator" value="VOID">
-                VOID
-            </label>
-        </div>
+                <div class="position-title">
+                    Epe Coordinator
+                </div>
 
-        <!-- SOCIAL DIRECTOR -->
-        <div class="position">
-            <div class="position-title">
-                Social Director
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Epe Coordinator"
+                        value="OKE HABEEB"
+                        required
+                    >
+                    OKE HABEEB
+                </label>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Epe Coordinator"
+                        value="VOID"
+                    >
+                    VOID
+                </label>
+
             </div>
 
-            <label class="candidate">
-                <input type="radio" name="social_director" value="ENNIE">
-                ENNIE
-            </label>
+            <!-- SOCIAL DIRECTOR -->
+            <div class="position">
 
-            <label class="candidate">
-                <input type="radio" name="social_director" value="VOID">
-                VOID
-            </label>
-        </div>
+                <div class="position-title">
+                    Social Director
+                </div>
 
-        <!-- GENERAL COORDINATOR -->
-        <div class="position">
-            <div class="position-title">
-                General Coordinator
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Social Director"
+                        value="ENNIE"
+                        required
+                    >
+                    ENNIE
+                </label>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="Social Director"
+                        value="VOID"
+                    >
+                    VOID
+                </label>
+
             </div>
 
-            <label class="candidate">
-                <input type="radio" name="general_coordinator" value="AYOMIKUN">
-                AYOMIKUN
-            </label>
+            <!-- GENERAL COORDINATOR -->
+            <div class="position">
 
-            <label class="candidate">
-                <input type="radio" name="general_coordinator" value="ISLAMIYAH">
-                ISLAMIYAH
-            </label>
+                <div class="position-title">
+                    General Coordinator
+                </div>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="General Coordinator"
+                        value="AYOMIKUN"
+                        required
+                    >
+                    AYOMIKUN
+                </label>
+
+                <label class="candidate">
+                    <input
+                        type="radio"
+                        name="General Coordinator"
+                        value="ISLAMIYAH"
+                    >
+                    ISLAMIYAH
+                </label>
+
+            </div>
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                SUBMIT BALLOT
+            </button>
+
         </div>
 
-        <button class="submit-btn" onclick="submitVote()">
-            SUBMIT BALLOT
-        </button>
-
-    </div>
+    </form>
 
     <div class="card" id="success">
+
         <h2>✅ Ballot Submitted</h2>
 
         <p>
@@ -347,9 +509,6 @@ footer {
             <strong>NAOSS LASU 2026 Election.</strong>
         </p>
 
-        <p>
-            Your participation is appreciated.
-        </p>
     </div>
 
 </div>
@@ -357,49 +516,6 @@ footer {
 <footer>
     © 2026 NAOSS LASU Independent Electoral Committee
 </footer>
-
-<script>
-
-function submitVote() {
-
-    const positions = [
-        "president",
-        "vice_president",
-        "general_secretary",
-        "pro",
-        "treasurer",
-        "welfare",
-        "financial_secretary",
-        "epe_coordinator",
-        "social_director",
-        "general_coordinator"
-    ];
-
-    for (let position of positions) {
-
-        const selected =
-            document.querySelector(
-                'input[name="' + position + '"]:checked'
-            );
-
-        if (!selected) {
-
-            alert(
-                "Please select a candidate for every position before submitting."
-            );
-
-            return;
-        }
-    }
-
-    document.getElementById("success").style.display = "block";
-
-    document.getElementById("success").scrollIntoView({
-        behavior: "smooth"
-    });
-}
-
-</script>
 
 </body>
 </html>
