@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NAOSS LASU 2026 Election</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7f5;
+    color: #222;
+}
+
+header {
+    background: #063b20;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+header p {
+    margin: 5px;
+}
+
+.container {
+    width: 92%;
+    max-width: 850px;
+    margin: 25px auto;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    color: #063b20;
+    margin-top: 0;
+}
+
+.position {
+    margin-top: 25px;
+}
+
+.candidate {
+    display: block;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.candidate:hover {
+    background: #eef7f1;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #063b20;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #075b30;
+}
+
+#success {
+    display: none;
+    text-align: center;
+    background: #e8f5ec;
+}
+
+footer {
+    background: #063b20;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>NAOSS LASU 2026</h1>
+    <p>Independent Electoral Committee</p>
+    <p>Official Election Portal</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>🗳️ Welcome</h2>
+        <p>
+            Welcome to the official NAOSS LASU 2026 Election Portal.
+            Kindly select your preferred candidate for each position.
+        </p>
+    </div>
+
+    <div class="card">
+
+        <div class="position">
+            <h2>President</h2>
+
+            <label class="candidate">
+                <input type="radio" name="president">
+                Candidate 1
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="president">
+                Candidate 2
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="president">
+                Candidate 3
+            </label>
+        </div>
+
+        <div class="position">
+            <h2>Vice President</h2>
+
+            <label class="candidate">
+                <input type="radio" name="vice">
+                Candidate 1
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="vice">
+                Candidate 2
+            </label>
+        </div>
+
+        <div class="position">
+            <h2>General Secretary</h2>
+
+            <label class="candidate">
+                <input type="radio" name="secretary">
+                Candidate 1
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="secretary">
+                Candidate 2
+            </label>
+        </div>
+
+        <br>
+
+        <button onclick="submitVote()">SUBMIT VOTE</button>
+
+    </div>
+
+    <div class="card" id="success">
+        <h2>✅ Vote Submitted</h2>
+        <p>
+            Thank you for participating in the NAOSS LASU 2026 Election.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 NAOSS LASU Independent Electoral Committee
+</footer>
+
+<script>
+function submitVote() {
+
+    const president =
+        document.querySelector('input[name="president"]:checked');
+
+    const vice =
+        document.querySelector('input[name="vice"]:checked');
+
+    const secretary =
+        document.querySelector('input[name="secretary"]:checked');
+
+    if (!president || !vice || !secretary) {
+        alert("Please select a candidate for every position.");
+        return;
+    }
+
+    document.getElementById("success").style.display = "block";
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+}
+</script>
+
+</body>
+</html>
