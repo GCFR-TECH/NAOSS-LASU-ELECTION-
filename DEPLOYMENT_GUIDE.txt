@@ -1,0 +1,33 @@
+NAOSS LASU 2026 — RENDER DEPLOYMENT CHECKLIST
+
+IMPORTANT:
+- This package is prepared for Render Web Service deployment.
+- The SQLite database is configured for /var/data/naoss.sqlite.
+- Render says service filesystems are ephemeral by default; the persistent disk keeps the SQLite database across restarts/deploys.
+- Render documents persistent disks as a paid feature. Do NOT use a free service as the actual election database.
+- Set ADMIN_PASSWORD in Render as a secret; never put the real password into GitHub files.
+- Before opening the election, test with dummy voter records.
+
+FILES:
+server.js
+package.json
+render.yaml
+README.txt
+public/index.html
+public/naoss-lasulogo.jpg
+
+DEPLOYMENT:
+1. Create/sign into GitHub.
+2. Create a new private repository named naoss-lasu-election.
+3. Upload all files/folders from this package to the repository (not the ZIP itself).
+4. Create a Render account and connect GitHub.
+5. Create a Web Service from the private repository.
+6. Build Command: npm install
+7. Start Command: npm start
+8. Add secret environment variable ADMIN_PASSWORD.
+9. Attach a persistent disk at /var/data (1 GB is enough for this election).
+10. Deploy and wait for a green/live status.
+11. Test the public URL with dummy voter credentials.
+12. Only then import the real voter list and open the election.
+
+DO NOT SEND YOUR GMAIL PASSWORD OR OTP TO ANYONE.
