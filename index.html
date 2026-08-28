@@ -7,10 +7,14 @@
 <title>NAOSS LASU 2026 Election</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f7f5;
+    background: #f3f6f4;
     color: #222;
 }
 
@@ -18,27 +22,27 @@ header {
     background: #063b20;
     color: white;
     text-align: center;
-    padding: 35px 15px;
+    padding: 30px 15px;
 }
 
 header h1 {
-    margin: 0 0 10px;
-    font-size: 30px;
+    margin: 0 0 8px;
+    font-size: 28px;
 }
 
 header p {
-    margin: 5px;
+    margin: 5px 0;
 }
 
 .container {
-    width: 92%;
+    width: 94%;
     max-width: 850px;
     margin: 25px auto;
 }
 
 .card {
     background: white;
-    padding: 25px;
+    padding: 22px;
     margin-bottom: 20px;
     border-radius: 12px;
     box-shadow: 0 3px 12px rgba(0,0,0,0.08);
@@ -50,15 +54,26 @@ header p {
 }
 
 .position {
-    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.position-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #063b20;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #063b20;
 }
 
 .candidate {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 15px;
     margin: 10px 0;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 9px;
+    background: #fafafa;
     cursor: pointer;
 }
 
@@ -66,19 +81,24 @@ header p {
     background: #eef7f1;
 }
 
-button {
+.candidate input {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+.submit-btn {
     width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 8px;
+    padding: 17px;
     background: #063b20;
     color: white;
+    border: none;
+    border-radius: 9px;
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
 }
 
-button:hover {
+.submit-btn:hover {
     background: #075b30;
 }
 
@@ -92,8 +112,23 @@ footer {
     background: #063b20;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 22px;
     margin-top: 40px;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 23px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .card {
+        padding: 17px;
+    }
 }
 </style>
 </head>
@@ -109,72 +144,211 @@ footer {
 <div class="container">
 
     <div class="card">
-        <h2>🗳️ Welcome</h2>
+        <h2>🗳️ Welcome to the Election Portal</h2>
+
         <p>
             Welcome to the official NAOSS LASU 2026 Election Portal.
-            Kindly select your preferred candidate for each position.
+        </p>
+
+        <p>
+            Kindly select <strong>one candidate</strong> for each position
+            before submitting your ballot.
+        </p>
+
+        <p>
+            <strong>Important:</strong> Please review your selections carefully
+            before submitting.
         </p>
     </div>
 
     <div class="card">
 
+        <!-- PRESIDENT -->
         <div class="position">
-            <h2>President</h2>
+            <div class="position-title">
+                President (Aare)
+            </div>
 
             <label class="candidate">
-                <input type="radio" name="president">
-                Candidate 1
+                <input type="radio" name="president" value="RUKKY">
+                RUKKY
             </label>
 
             <label class="candidate">
-                <input type="radio" name="president">
-                Candidate 2
-            </label>
-
-            <label class="candidate">
-                <input type="radio" name="president">
-                Candidate 3
+                <input type="radio" name="president" value="VOID">
+                VOID
             </label>
         </div>
 
+        <!-- VICE PRESIDENT -->
         <div class="position">
-            <h2>Vice President</h2>
+            <div class="position-title">
+                Vice President
+            </div>
 
             <label class="candidate">
-                <input type="radio" name="vice">
-                Candidate 1
+                <input type="radio" name="vice_president" value="PELUMI">
+                PELUMI
             </label>
 
             <label class="candidate">
-                <input type="radio" name="vice">
-                Candidate 2
+                <input type="radio" name="vice_president" value="MOBOLA">
+                MOBOLA
             </label>
         </div>
 
+        <!-- GENERAL SECRETARY -->
         <div class="position">
-            <h2>General Secretary</h2>
+            <div class="position-title">
+                General Secretary
+            </div>
 
             <label class="candidate">
-                <input type="radio" name="secretary">
-                Candidate 1
+                <input type="radio" name="general_secretary" value="ADEBAYO">
+                ADEBAYO
             </label>
 
             <label class="candidate">
-                <input type="radio" name="secretary">
-                Candidate 2
+                <input type="radio" name="general_secretary" value="VOID">
+                VOID
             </label>
         </div>
 
-        <br>
+        <!-- PRO -->
+        <div class="position">
+            <div class="position-title">
+                P.R.O
+            </div>
 
-        <button onclick="submitVote()">SUBMIT VOTE</button>
+            <label class="candidate">
+                <input type="radio" name="pro" value="AYINLA">
+                AYINLA
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="pro" value="VOID">
+                VOID
+            </label>
+        </div>
+
+        <!-- TREASURER -->
+        <div class="position">
+            <div class="position-title">
+                Treasurer
+            </div>
+
+            <label class="candidate">
+                <input type="radio" name="treasurer" value="DAVID">
+                DAVID
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="treasurer" value="VOID">
+                VOID
+            </label>
+        </div>
+
+        <!-- WELFARE DIRECTOR -->
+        <div class="position">
+            <div class="position-title">
+                Welfare Director
+            </div>
+
+            <label class="candidate">
+                <input type="radio" name="welfare" value="SHO">
+                SHO
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="welfare" value="VOID">
+                VOID
+            </label>
+        </div>
+
+        <!-- FINANCIAL SECRETARY -->
+        <div class="position">
+            <div class="position-title">
+                Financial Secretary
+            </div>
+
+            <label class="candidate">
+                <input type="radio" name="financial_secretary" value="MUBARAK">
+                MUBARAK
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="financial_secretary" value="HABIBAT">
+                HABIBAT
+            </label>
+        </div>
+
+        <!-- EPE COORDINATOR -->
+        <div class="position">
+            <div class="position-title">
+                Epe Coordinator
+            </div>
+
+            <label class="candidate">
+                <input type="radio" name="epe_coordinator" value="OKE HABEEB">
+                OKE HABEEB
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="epe_coordinator" value="VOID">
+                VOID
+            </label>
+        </div>
+
+        <!-- SOCIAL DIRECTOR -->
+        <div class="position">
+            <div class="position-title">
+                Social Director
+            </div>
+
+            <label class="candidate">
+                <input type="radio" name="social_director" value="ENNIE">
+                ENNIE
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="social_director" value="VOID">
+                VOID
+            </label>
+        </div>
+
+        <!-- GENERAL COORDINATOR -->
+        <div class="position">
+            <div class="position-title">
+                General Coordinator
+            </div>
+
+            <label class="candidate">
+                <input type="radio" name="general_coordinator" value="AYOMIKUN">
+                AYOMIKUN
+            </label>
+
+            <label class="candidate">
+                <input type="radio" name="general_coordinator" value="ISLAMIYAH">
+                ISLAMIYAH
+            </label>
+        </div>
+
+        <button class="submit-btn" onclick="submitVote()">
+            SUBMIT BALLOT
+        </button>
 
     </div>
 
     <div class="card" id="success">
-        <h2>✅ Vote Submitted</h2>
+        <h2>✅ Ballot Submitted</h2>
+
         <p>
-            Thank you for participating in the NAOSS LASU 2026 Election.
+            Thank you for participating in the
+            <strong>NAOSS LASU 2026 Election.</strong>
+        </p>
+
+        <p>
+            Your participation is appreciated.
         </p>
     </div>
 
@@ -185,29 +359,46 @@ footer {
 </footer>
 
 <script>
+
 function submitVote() {
 
-    const president =
-        document.querySelector('input[name="president"]:checked');
+    const positions = [
+        "president",
+        "vice_president",
+        "general_secretary",
+        "pro",
+        "treasurer",
+        "welfare",
+        "financial_secretary",
+        "epe_coordinator",
+        "social_director",
+        "general_coordinator"
+    ];
 
-    const vice =
-        document.querySelector('input[name="vice"]:checked');
+    for (let position of positions) {
 
-    const secretary =
-        document.querySelector('input[name="secretary"]:checked');
+        const selected =
+            document.querySelector(
+                'input[name="' + position + '"]:checked'
+            );
 
-    if (!president || !vice || !secretary) {
-        alert("Please select a candidate for every position.");
-        return;
+        if (!selected) {
+
+            alert(
+                "Please select a candidate for every position before submitting."
+            );
+
+            return;
+        }
     }
 
     document.getElementById("success").style.display = "block";
 
-    window.scrollTo({
-        top: document.body.scrollHeight,
+    document.getElementById("success").scrollIntoView({
         behavior: "smooth"
     });
 }
+
 </script>
 
 </body>
